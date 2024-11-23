@@ -1,0 +1,248 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Checkout Wrapper */
+#checkout-wrapper {
+    padding: 20px;
+}
+
+/* Row */
+#checkout-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Info Section */
+#info-box {
+    flex: 1 1 45%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 27px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    
+}
+
+#info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+#info-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Input Groups */
+#name-group,
+#phone-group,
+#address-group,
+#notes-group {
+    margin-bottom: 15px;
+}
+
+#name-group label,
+#phone-group label,
+#address-group label,
+#notes-group label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#name-group input,
+#phone-group input,
+#address-group input,
+#notes-group textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+#notes-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+#name-group input:focus,
+#phone-group input:focus,
+#address-group input:focus,
+#notes-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Placeholder Style */
+#name-group input::placeholder,
+#phone-group input::placeholder,
+#address-group input::placeholder,
+#notes-group textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Location Row */
+#location-row {
+    display: flex;
+    gap: 10px;
+}
+
+#city-group,
+#district-group {
+    flex: 1;
+}
+
+#city-group label,
+#district-group label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#city-group select,
+#district-group select {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+#city-group select:focus,
+#district-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Order Section */
+#order-box {
+    flex: 1 1 45%;
+    background-color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#order-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Order Title */
+#order-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table */
+#order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+#order-table th,
+#order-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+#order-table tfoot th,
+#order-table tfoot td {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Payment Methods */
+#payment-cash,
+#payment-bank {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#payment-cash input,
+#payment-bank input {
+    margin-right: 10px;
+}
+
+#payment-cash label,
+#payment-bank label {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Button */
+#submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #checkout-row {
+        flex-direction: column;
+    }
+
+    #info-box,
+    #order-box {
+        flex: 1 1 100%;
+    }
+
+    #location-row {
+        flex-direction: column;
+    }
+}

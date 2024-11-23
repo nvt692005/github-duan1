@@ -1,11 +1,11 @@
 <?php
 
-class HomeController
+class CartController
 {
     public function __construct()
 
     {
-        include_once 'view/home.php';
+        include_once 'view/cart.php';
         
     }
 }

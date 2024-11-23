@@ -1,11 +1,11 @@
 <?php
 
-class HomeController
+class CheckOutController
 {
     public function __construct()
 
     {
-        include_once 'view/home.php';
+        include_once 'view/checkout.php';
         
     }
 }

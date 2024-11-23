@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #e0f7fa, #80deea, #0288d1); /* Màu gradient chính */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+body::before {
+    
+    background: url('https://www.transparenttextures.com/patterns/squairy-light.png'); /* Hiệu ứng mờ */
+    opacity: 0.2;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+    text-align: center;
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cart-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cart-items {
+    flex: 2;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.header-column {
+    flex: 1;
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.item-column {
+    flex: 1;
+    text-align: center;
+}
+
+.item-image img {
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item-size, .item-price, .item-discount {
+    font-size: 14px;
+    color: #555;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-delete {
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.btn-quantity {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-quantity:hover {
+    background-color: #0056b3;
+}
+
+.item-quantity input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.cart-summary {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #007bff; /* Viền màu thương hiệu */
+    position: relative;
+}
+
+.summary-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.summary-details {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.summary-details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.summary-details span {
+    font-weight: bold;
+}
+
+.summary-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 15px;
+    border-top: 2px solid #ddd;
+    padding-top: 15px;
+}
+.btn-checkout a {
+    color: white;
+}
+.btn-checkout {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.summary-discount-box {
+    background-color: #e9f7f7;
+    color: #007bff;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px dashed #007bff;
+    font-weight: bold;
+}
+
+.summary-note {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .cart-summary {
+        margin-top: 20px;
+    }
+}
+
+
+.btn-back-to-shop {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-back-to-shop:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .cart-content {
+        flex-direction: column;
+    }
+}

@@ -11,6 +11,10 @@ body {
     color: #333;
     line-height: 1.6;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 /* Container */
 .container {
@@ -135,7 +139,6 @@ body {
 }
 
 .category-item {
-
     text-align: center;
     font-weight: bold;
     cursor: pointer;
@@ -159,9 +162,9 @@ body {
 
 /* Mỗi mục */
 .category-item {
-    text-align: center; /* Căn giữa nội dung trong mỗi mục */
-    margin: 10px; /* Tạo khoảng cách giữa các mục */
-    width: 100px; /* Đặt chiều rộng cố định */
+  margin: 10px 0;
+  width: auto;
+  padding-right: 20px
 }
 
 /* Biểu tượng */
@@ -192,7 +195,7 @@ body {
 
 .product_container {
     max-width: 1250px;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: white;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);

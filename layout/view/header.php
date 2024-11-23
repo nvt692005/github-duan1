@@ -7,15 +7,14 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             </select>
-
-    <link rel="stylesheet" href="./layout/public/css/index.css">
+    <link rel="stylesheet" href="public/css/index.css">
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <div class="header_background">
           <div class="header">
-            <img src="./layout/public/img/1.png">
+            <img src="public/img/1.png">
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm nhanh sản phẩm...">
                 <button>
@@ -24,12 +23,8 @@
             </div>
         
             <div class="nav-links">
-                <a href="#">
-                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-user"></i> Đăng nhập
-                </a>
+                <a href="index.php?trang=cart"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a>
+                <a href="#"> <i class="fa-solid fa-user"></i> Đăng nhập</a>
             </div>
         </div>
         </div>
