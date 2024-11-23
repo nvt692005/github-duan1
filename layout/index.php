@@ -1,6 +1,8 @@
 <?php
-include_once 'view/header.php';
 $page = isset($_GET['trang']) ? $_GET['trang'] : 'home';
+if ($page !== 'login' && $page !== 'signup') {
+    include_once 'view/header.php';
+}
 switch ($page) {
     case 'home':
         include_once 'controller/HomeController.php';
@@ -18,7 +20,18 @@ switch ($page) {
         include_once 'controller/CheckOutController.php';
         $CheckOutController = new CheckOutController();
         break;
-    
-    
+    case 'login':
+        include_once 'controller/LoginController.php';
+        $LoginController = new LoginController();
+        break;
+    case 'signup':
+        include_once 'controller/SignUpController.php';
+        $SignUpController = new SignUpController();
+        break;
+    default:
+        echo "Trang không tồn tại!";
+        break;
 }
-include_once 'view/footer.php';
+if ($page !== 'login' && $page !== 'signup') {
+    include_once 'view/footer.php';
+}
