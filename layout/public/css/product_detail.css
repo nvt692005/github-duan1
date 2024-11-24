@@ -117,7 +117,7 @@ p.link_now {
     background-color: #f0f0f0;
 }
 
-button {
+button.click_buy {
     width: 100%;
     background-color:#FBB46D;
     color: white;
@@ -130,7 +130,7 @@ button {
 }
 
 
-button:hover {
+ button.click_buy:hover {
     background-color: darkred;
 }
 

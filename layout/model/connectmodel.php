@@ -4,12 +4,12 @@ class ConnectModel{
     public $servername = "localhost";
     public $username = "root";
     public $password = "";
-    public $port = "3366"; 
+    public $port = "3306"; 
     public $conn;
     
     public function ketnoi(){
         try{
-            $this->conn = new PDO("mysql:host=".$this->servername.";port=".$this->port.";dbname=asm2;charset=utf8",$this->username,$this->password);
+            $this->conn = new PDO("mysql:host=".$this->servername.";port=".$this->port.";dbname=duan1;charset=utf8",$this->username,$this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->conn;
         } catch(PDOException $e) {
@@ -34,6 +34,8 @@ class ConnectModel{
         $this->conn = null; 
         return $kq; 
     }
+   
+    
 }
 
 ?>

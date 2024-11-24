@@ -84,16 +84,23 @@ a {
 }
 
 .nav-links a {
-    color: white;
+    color: rgba(255, 255, 255, 0.863);
     text-decoration: none;
     font-weight: bold;
     display: flex;
     align-items: center;
     gap: 5px;
+
+}
+
+.nav-links a {
+  text-decoration: none; /* Xóa gạch chân */
+ 
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+  text-decoration: none; /* Xóa gạch chân khi hover */
+  color: #189EFF; /* Màu thay đổi khi hover (nếu muốn) */
 }
 
 .nav-links a img {
@@ -145,6 +152,10 @@ a {
     white-space: nowrap;
     
 }
+.category-item a:hover{
+  color:#189EFF ;
+}
+
 /* Container chính */
 .category-container {
     max-width: 1250px;

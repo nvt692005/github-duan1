@@ -1,17 +1,27 @@
 <?php
 $page = isset($_GET['trang']) ? $_GET['trang'] : 'home';
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$iddm = isset($_GET['iddm']) ? $_GET['iddm'] : '';
 if ($page !== 'login' && $page !== 'signup') {
     include_once 'view/header.php';
 }
 switch ($page) {
     case 'home':
         include_once 'controller/HomeController.php';
-        $HomeController = new HomeController();
+        $HomeController = new HomeController($id, $iddm);
         break;
-    case 'adidas':
+    case 'product':
+        include_once 'controller/ProductController.php';
+        $ProductController = new ProductController($iddm);
+        break;
+   /*  case 'new':
         include_once 'controller/ProductController.php';
         $ProductController = new ProductController();
         break;
+    case 'contact':
+            include_once 'controller/ProductController.php';
+            $ProductController = new ProductController();
+            break; */
     case 'cart':
         include_once 'controller/CartController.php';
         $CartController = new CartController();
@@ -32,6 +42,9 @@ switch ($page) {
         echo "Trang không tồn tại!";
         break;
 }
+
+
+
 if ($page !== 'login' && $page !== 'signup') {
     include_once 'view/footer.php';
 }

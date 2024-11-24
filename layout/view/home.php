@@ -6,6 +6,7 @@
     <img src="public/img/banner2.png" alt="AF1 All White">
   </div>
 </div>
+
 <div class="product_container">
   <div class="tittle_hot">
     <p>Giá Sốc⚡Hôm Nay</p>
@@ -17,284 +18,61 @@
     </div>
   </div>
 
-  <!-- Products -->
+  <!-- Sản phẩm khuyến mãi -->
   <div class="products">
-    <!-- Product Item 1 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/adidas1.webp">
-      <a href="view/product_detail.php"><h3>Giày Onitsuka Tiger Tokuten Beige Green Like Auth</h3></a>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 2 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/nike2.jpg" alt="Adidas Samba">
-      <h3>Giày Adidas Samba OG Cloud White Core Black Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 3 -->
-    <div class="product">
-      <div class="discount">-53%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan">
-      <h3>Giày Nike Air Jordan 1 Low 'Aluminum' Ice Blue Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.800.000₫</span>
-        <span class="new-price">840.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 4 -->
-    <div class="product">
-      <div class="discount">-39%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan Panda">
-      <h3>Giày Nike Air Jordan 1 Low Panda Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.400.000₫</span>
-        <span class="new-price">850.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 5 -->
-    <div class="product">
-      <div class="discount">-28%</div>
-      <img src="public/img/converse1.jpg" alt="JD1 Paris">
-      <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-      <p class="price">
-        <span class="old-price">900.000₫</span>
-        <span class="new-price">650.000₫</span>
-      </p>
-
-    </div>
+    <?php
+    $ch = '';
+    foreach ($homemodel->mangspkm as $item){
+      extract($item);
+      $ch .= '
+      <div class="product">
+        <div class="discount">-' . $GiamGia . '%</div>
+        <img src="public/img/' . $Path . '" alt="' . $TenSP . '">
+        <a href="index.php?trang=home&id='.$Id_SP.'&iddm='.$Id_DM.'"><h3>' . $TenSP . '</h3></a>
+        <p class="price">
+          <span class="old-price">'. number_format($GiaGoc, 0, ',', '.') . '₫</span>
+          <span class="new-price">'. number_format($Gia, 0, ',', '.') .'₫</span>
+        </p>
+      </div>';
+    }
+    echo $ch;
+    ?>
   </div>
 </div>
+<?php
+// Hiển thị sản phẩm theo danh mục
+if (!empty($homemodel->mangsptheodm)) {
+    $ch = ''; // Khởi tạo biến $ch để chứa HTML
 
-<div class="product_container">
-  <div class="tittle">
-    <p>Giày Nike </p>
-    <div class="countdown">
-      <a href="#" class="view-all">Xem tất cả</a>
-    </div>
-  </div>
+    foreach ($homemodel->mangsptheodm as $categoryName => $products) {
+        $ch .= "<div class='product_container'>";  // Mở container sản phẩm
+        $ch .= "<div class='tittle'><p>" . $categoryName . "</p></div>";  // Tên danh mục
+        $ch .= "<div class='products'>";  // Mở danh sách sản phẩm
 
-  <!-- Products -->
-  <div class="products">
-    <!-- Product Item 1 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/adidas1.webp">
-      <h3>Giày Onitsuka Tiger Tokuten Beige Green Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
+        foreach ($products as $sanpham) {
+            extract($sanpham);  // Lấy thông tin sản phẩm từ mảng
 
-    </div>
+            // Nối HTML của sản phẩm vào biến $ch
+            $ch .= "<div class='product'>";
+            $ch .= "<div class='discount'>-" . $GiamGia . "%</div>";
+            $ch .= "<img src='public/img/" . $Path . "' alt='" . $TenSP . "'>";
+            $ch .= "<h3>" . $TenSP . "</h3>";
+            $ch .= "<p class='price'>
+                    <span class='old-price'>" . number_format($GiaGoc, 0, ',', '.') . "₫</span>
+                    <span class='new-price'>" . number_format($Gia, 0, ',', '.') . "₫</span>
+                  </p>";
+            $ch .= "</div>";  // Đóng div.product
+        }
 
-    <!-- Product Item 2 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/nike2.jpg" alt="Adidas Samba">
-      <h3>Giày Adidas Samba OG Cloud White Core Black Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
+        $ch .= "</div>";  // Đóng div.products
+        $ch .= "</div>";  // Đóng div.product_container
+    }
 
-    </div>
-
-    <!-- Product Item 3 -->
-    <div class="product">
-      <div class="discount">-53%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan">
-      <h3>Giày Nike Air Jordan 1 Low 'Aluminum' Ice Blue Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.800.000₫</span>
-        <span class="new-price">840.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 4 -->
-    <div class="product">
-      <div class="discount">-39%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan Panda">
-      <h3>Giày Nike Air Jordan 1 Low Panda Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.400.000₫</span>
-        <span class="new-price">850.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 5 -->
-    <div class="product">
-      <div class="discount">-28%</div>
-      <img src="public/img/converse1.jpg" alt="JD1 Paris">
-      <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-      <p class="price">
-        <span class="old-price">900.000₫</span>
-        <span class="new-price">650.000₫</span>
-      </p>
-
-    </div>
-  </div>
-</div>
+    // In ra chuỗi HTML đã được tạo
+    echo $ch;
+} else {
+    echo "<p>Không có sản phẩm trong các danh mục này.</p>";
+}
+?>
 
 
-
-<div class="product_container">
-  <div class="tittle">
-    <p>Giày Adidas </p>
-    <div class="countdown">
-      <a href="#" class="view-all">Xem tất cả</a>
-    </div>
-  </div>
-
-  <!-- Products -->
-  <div class="products">
-    <!-- Product Item 1 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/adidas1.webp">
-      <h3>Giày Onitsuka Tiger Tokuten Beige Green Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 2 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/nike2.jpg" alt="Adidas Samba">
-      <h3>Giày Adidas Samba OG Cloud White Core Black Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 3 -->
-    <div class="product">
-      <div class="discount">-53%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan">
-      <h3>Giày Nike Air Jordan 1 Low 'Aluminum' Ice Blue Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.800.000₫</span>
-        <span class="new-price">840.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 4 -->
-    <div class="product">
-      <div class="discount">-39%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan Panda">
-      <h3>Giày Nike Air Jordan 1 Low Panda Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.400.000₫</span>
-        <span class="new-price">850.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 5 -->
-    <div class="product">
-      <div class="discount">-28%</div>
-      <img src="public/img/converse1.jpg" alt="JD1 Paris">
-      <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-      <p class="price">
-        <span class="old-price">900.000₫</span>
-        <span class="new-price">650.000₫</span>
-      </p>
-
-    </div>
-  </div>
-</div>
-
-<div class="product_container">
-  <div class="tittle">
-    <p>Giày Converse </p>
-    <div class="countdown">
-      <a href="#" class="view-all">Xem tất cả</a>
-    </div>
-  </div>
-
-  <!-- Products -->
-  <div class="products">
-    <!-- Product Item 1 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/adidas1.webp">
-      <h3>Giày Onitsuka Tiger Tokuten Beige Green Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 2 -->
-    <div class="product">
-      <div class="discount">-38%</div>
-      <img src="public/img/nike2.jpg" alt="Adidas Samba">
-      <h3>Giày Adidas Samba OG Cloud White Core Black Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.200.000₫</span>
-        <span class="new-price">750.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 3 -->
-    <div class="product">
-      <div class="discount">-53%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan">
-      <h3>Giày Nike Air Jordan 1 Low 'Aluminum' Ice Blue Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.800.000₫</span>
-        <span class="new-price">840.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 4 -->
-    <div class="product">
-      <div class="discount">-39%</div>
-      <img src="public/img/nike3.jpg" alt="Nike Air Jordan Panda">
-      <h3>Giày Nike Air Jordan 1 Low Panda Like Auth</h3>
-      <p class="price">
-        <span class="old-price">1.400.000₫</span>
-        <span class="new-price">850.000₫</span>
-      </p>
-
-    </div>
-
-    <!-- Product Item 5 -->
-    <div class="product">
-      <div class="discount">-28%</div>
-      <img src="public/img/converse1.jpg" alt="JD1 Paris">
-      <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-      <p class="price">
-        <span class="old-price">900.000₫</span>
-        <span class="new-price">650.000₫</span>
-      </p>
-
-    </div>
-  </div>
-</div>

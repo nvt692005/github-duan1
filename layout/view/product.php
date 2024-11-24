@@ -1,29 +1,31 @@
 
 <link rel="stylesheet" href="public/css/product.css">
-        <div class="header-menu">
-            <div class="header_link"><a href="">Trang chủ</a> <p class="link_now">Giày Adidas</p></div>
-            </div>
+       
         <div class="product_container1">
             <div class="product_catagory">
                         <p>DANH MỤC SẢN PHẨM</p>
                         <div class="product_catagory_list">
-                            <a href="" style="color: #189EFF;">Giày Adidas</a> <br>
-                            <a href="">Giày Converse</a> <br>
-                            <a href="">Giày Nike</a> 
+                            <a href="index.php?trang=product">Tất Cả Sản Phẩm</a><br>
+                            <style >
+                             .product_catagory_list a {
+  color: #000; /* Màu mặc định cho liên kết */
+}
+
+
+.product_catagory_list a:hover {
+  color: #FF5733; /* Màu khi rê chuột */
+}
+                            </style>
+                            <?php
+
+                            $ch = '';
+                            foreach ($dm->dm as $key => $value) {
+                                $ch .= '<a  href="index.php?trang=product&iddm='.$value['Id_DM'] .' &Ten_DM=' . $value['Ten_DM'] . '">' . $value['Ten_DM'] . '</a> <br>';
+                            }
+                            echo $ch;
+                            ?>
+
                         </div>
-
-                        <div class="filter-container">
-                          <div class="filter-title">LỌC THEO GIÁ</div>
-                          <div class="slider-container">
-                              <input type="range" min="0" max="1200000" value="0" class="slider" id="priceRange">
-                          </div>
-                          <div class="search_price">
-                          <button class="filter-button">LỌC</button>
-                          <div class="price-range">Giá: <span>0₫</span> — <span>1.200.000₫</span></div>
-                        </div>
-                      </div>
-
-
 
 
                         <div class="product_catagory_policy">
@@ -53,199 +55,53 @@
                         </div>
                 </div>
                         <div class="product_list">
-                          <select id="sort-options">
-                              <option value="rating">Theo đánh giá</option>
-                              <option value="price-asc">Giá thấp đến cao</option>
-                              <option value="price-desc">Giá cao đến thấp</option>
+                        <div class="header-menu">
+                        <?php
+                        
+                        $category_name = isset($_GET['Ten_DM']) ? $_GET['Ten_DM'] : 'Tất Cả Sản Phẩm';  // Mặc định là "Tất Cả Sản Phẩm" nếu không có Ten_DM trong URL
+                        ?>
+
+                        <div class="header_link"><p class="link_now"><?php echo $category_name?>
+                        </p></div>
+                        <label for="sort-options">Sắp xếp theo</label>
+                        <select id="sort-options">
+                              <option value="rating">Sản Phẩm Mới Ra Mắt</option>
+                              <option value="trending">Sản Phẩm Trending</option>
+                              <option value="price-desc">Giá Từ Cao Đến Thấp</option>
+                              <option value="price-asc">Giá Từ Thấp Đến Cao</option>
+
                           </select>
+                </div>
+                          
                             <!-- Products -->
                             <div class="products">
                               <!-- Product Item 1 -->
-                              <div class="product">
-                                <div class="discount">-38%</div>
-                                <img src="public/img/adidas1.webp">
-                                <h3>Giày Onitsuka Tiger Tokuten Beige Green Like Auth</h3>
-                                <p class="price">
-                                  <span class="old-price">1.200.000₫</span>
-                                  <span class="new-price">750.000₫</span>
-                                </p>
-                             
-                              </div>
-                        
-                              <!-- Product Item 2 -->
-                              <div class="product">
-                                <div class="discount">-38%</div>
-                                <img src="public/img/nike2.jpg" alt="Adidas Samba">
-                                <h3>Giày Adidas Samba OG Cloud White Core Black Like Auth</h3>
-                                <p class="price">
-                                  <span class="old-price">1.200.000₫</span>
-                                  <span class="new-price">750.000₫</span>
-                                </p>
+                              <?php
+                               $ch ='';
+                               foreach ($mangsp as $key => $value) {
+                                extract($value);
+                                $ch .= '
+                                <div class="product">
+                                  <div class="discount">-' . $GiamGia . '%</div>
+                                  <img src="public/img/'.$Path.'" alt="' . $TenSP . '">
+                                  <a href="view/product_detail.php"><h3>' . $TenSP . '</h3></a>
+                                  <p class="price">
+                                    <span class="old-price">'. number_format($GiaGoc, 0, ',', '.') . '₫</span>
+                                    <span class="new-price">'. number_format($Gia, 0, ',', '.') .'₫</span>
+                                  </p>
+                                </div>';
+                              }
+                              echo $ch;
                               
-                              </div>
-                        
-                              <!-- Product Item 3 -->
-                              <div class="product">
-                                <div class="discount">-53%</div>
-                                <img src="public/img/nike3.jpg" alt="Nike Air Jordan">
-                                <h3>Giày Nike Air Jordan 1 Low 'Aluminum' Ice Blue Like Auth</h3>
-                                <p class="price">
-                                  <span class="old-price">1.800.000₫</span>
-                                  <span class="new-price">840.000₫</span>
-                                </p>
-                              
-                              </div>
-                        
-                              <!-- Product Item 4 -->
-                              <div class="product">
-                                <div class="discount">-39%</div>
-                                <img src="public/img/nike3.jpg" alt="Nike Air Jordan Panda">
-                                <h3>Giày Nike Air Jordan 1 Low Panda Like Auth</h3>
-                                <p class="price">
-                                  <span class="old-price">1.400.000₫</span>
-                                  <span class="new-price">850.000₫</span>
-                                </p>
-                               
-                              </div>
-                        
-                              <!-- Product Item 5 -->
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
-
-                              <div class="product">
-                                <div class="discount">-28%</div>
-                                <img src="public/img/converse1.jpg" alt="JD1 Paris">
-                                <h3>Giày JD1 Paris Bản Trung Cực Nét 1:1</h3>
-                                <p class="price">
-                                  <span class="old-price">900.000₫</span>
-                                  <span class="new-price">650.000₫</span>
-                                </p>
-                               
-                              </div>
+                                ?>
 
                             </div>
                           </div>
                 
 
                     </div>
+                 
+  
 
 
             </div>
