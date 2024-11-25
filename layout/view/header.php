@@ -20,6 +20,7 @@
     <!-- Header -->
     <div class="header_background">
       <div class="header">
+        <div class="header_left">
         <img src="public/img/1.png">
         <div class="search-bar">
           <input type="text" placeholder="Tìm kiếm nhanh sản phẩm...">
@@ -27,6 +28,7 @@
             <i class="fa-solid fa-magnifying-glass"
               style="color: #FFD43B;height: 16px;"></i>
           </button>
+        </div>
         </div>
 
         <div class="nav-links">

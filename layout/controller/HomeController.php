@@ -9,7 +9,6 @@ class HomeController
         $homemodel = new homemodel();
         if ($id != '') {
             $homemodel->onesp($id);
-            $product = $homemodel->motsp;
             $homemodel->splienquan($id, $iddm);
             include_once 'view/product_detail.php';
             

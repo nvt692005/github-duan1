@@ -27,8 +27,9 @@ class HomeModel
         include_once 'model/connectmodel.php';
         $data = new ConnectModel();
         $sql = "
-        Select s.Id_SP, s.TenSP, s.Gia, s.GiaGoc, s.MotaSP, h.Path
+        Select s.Id_SP, s.TenSP,Ten_DM, s.Gia, s.GiaGoc, s.MotaSP, h.Path
         FROM sanpham s
+        JOIN DanhMuc d ON d.Id_DM = s.Id_DM
         JOIN hinhanh h ON s.Id_SP = h.Id_SP
         WHERE s.Id_SP = :id
         ";

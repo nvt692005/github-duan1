@@ -18,11 +18,11 @@ CREATE TABLE DanhMuc (
 -- Tạo bảng SanPham
 CREATE TABLE SanPham (
     Id_SP INT PRIMARY KEY,
-    TenSP NVARCHAR(50),
+    TenSP NVARCHAR(100),
     Id_DM INT,
     Gia DECIMAL(10, 2),
     GiaGoc DECIMAL(10, 2),
-    MotaSP NVARCHAR(700),
+    MotaSP NVARCHAR(1000),
     GiamGia INT(10),
     LuotXem INT(10),
     NgayDang TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -92,7 +92,7 @@ INSERT INTO DanhMuc (Id_DM, Ten_DM) VALUES
 
 (1, 'Giày Nike'),
 (2, 'Giày Adidas'),
-(3, 'Giày Converse'),
+(3, 'Giày Converse');
 
 -- Thêm dữ liệu mẫu vào SizeGiay
 INSERT INTO SizeGiay (Id_Size, Size) VALUES
@@ -105,7 +105,7 @@ INSERT INTO SizeGiay (Id_Size, Size) VALUES
 
 INSERT INTO SanPham (Id_SP, TenSP, Id_DM, GiaGoc, Gia, GiamGia, LuotXem, MotaSP) VALUES
 -- SP giam gia
-(1, 'Giày Nike Air Jordan 1 Low ''Aluminum'' Ice Blue Like Auth', 1, 1800000 , 840000, 53,10, 'Giày Nike Air Jordan 1 Low ''Aluminum'' Ice Blue với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Jordan 1 Low ''Aluminum'' Ice Blue Like Auth tại TyHi Sneaker (hàng chuẩn bản xịn nhất thị trường).'),
+(1, 'Giày Nike Air Jordan 1 Low "Aluminum Ice" Blue Like Auth', 1, 1800000 , 840000, 53,10, 'Giày Nike Air Jordan 1 Low ''Aluminum'' Ice Blue với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Jordan 1 Low ''Aluminum'' Ice Blue Like Auth tại TyHi Sneaker (hàng chuẩn bản xịn nhất thị trường).'),
 (2, 'Giày Air Force One All White Like Auth 2023', 2, 1800000, 900000, 50,8, 'Giày Air Force One All White với màu full trắng cùng thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích (đặc biệt là các bạn học sinh do một số trường học yêu cầu mang giày trắng). Và nếu bạn cũng là một người đam mê dòng sneaker trắng thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Air Force One All White tại TyHi Sneaker (bản siêu cấp da bò nhăn xịn nhất thị trường).'),
 (3, 'Giày Nike Air Force 1 ''White Black''', 1, 1500000, 750000, 50,12, 'Giày Nike Air Force 1 ''White Black'' với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.'),
 (4, 'Giày Adidas Pureboost 22 xanh navy Best Quality', 2, 1800000, 820000, 54,11, 'Giày chạy bộ địa hình Nike Pegasus Trail.'),
@@ -114,7 +114,7 @@ INSERT INTO SanPham (Id_SP, TenSP, Id_DM, GiaGoc, Gia, GiamGia, LuotXem, MotaSP)
 -- Sản phẩm thuộc danh mục 1 (Giày Nike)
 (6, 'Giày Nike Air Force 1 LV White Brown 2024 Like Auth', 1, 1500000 , 850000, 43,51, 'Giày Nike Air Force 1 LV White Brown 2024 Like Auth với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Force 1 LV White Brown 2024 Like Auth tại TyHi Sneaker (hàng chuẩn likeuauth, bản xịn nhất thị trường, đế Air 100%).'),
 (7, 'Giày Nike Air Force 1 07 Low Dark Grey Metallic Gold', 1, 1600000, 820000, 49,52, 'Giày Nike Air Force 1 07 Low Dark Grey Metallic Gold là phiên bản độc lạ hiện nay ở Việt Nam ít ai có. Shop nhập về được số lượng ít, giá cực tốt cho mọi người trải nghiệm. Đôi giày Nike Air Force 1 07 Low Dark Grey Metallic Gold mang đậm phong cách và tính biểu tượng của dòng sản phẩm Air Force 1. Đây là một trong những phiên bản được thiết kế cực kỳ ấn tượng từ Nike.'),
-(8, 'Giày Nike Air Jordan 4 Retro ''Seafoam'' AQ9129-103 Like Auth', 1, 2500000,65, 1400000, 44, 'Giày Nike Air Jordan 4 Retro ''Seafoam'' AQ9129-103 Like Auth là một phiên bản đặc biệt trong dòng sản phẩm Air Jordan, với thiết kế táo bạo và tinh tế. Màu sắc Seafoam độc đáo và chất liệu da cao cấp kết hợp với công nghệ Air Sole tạo nên đôi giày không chỉ thể thao mà còn là biểu tượng thời trang, phù hợp với người yêu phong cách cá tính và chất lượng. Và nếu bạn cũng là một người đam mê dòng sneaker trắng thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Jordan 4 Retro ''Seafoam'' AQ9129-103 Like Auth tại TyHi Sneaker (hàng chuẩn like auth đế phát sáng, bản xịn nhất thị trường):'),
+(8, 'Giày Nike Air Jordan 4 Retro ''Seafoam'' AQ9129-103 Like Auth', 1, 2500000, 1400000, 65, 44, 'Giày Nike Air Jordan 4 Retro ''Seafoam'' AQ9129-103 Like Auth là một phiên bản đặc biệt trong dòng sản phẩm Air Jordan, với thiết kế táo bạo và tinh tế. Màu sắc Seafoam độc đáo và chất liệu da cao cấp kết hợp với công nghệ Air Sole tạo nên đôi giày không chỉ thể thao mà còn là biểu tượng thời trang, phù hợp với người yêu phong cách cá tính và chất lượng. Và nếu bạn cũng là một người đam mê dòng sneaker trắng thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Jordan 4 Retro ''Seafoam'' AQ9129-103 Like Auth tại TyHi Sneaker (hàng chuẩn like auth đế phát sáng, bản xịn nhất thị trường):'),
 (9, 'Giày Nike Air Jordan 4 Retro Kaws Like Auth', 1, 3500000, 2200000, 37,70, 'Giày Nike Air Jordan 4 Retro Kaws Like Auth là một phiên bản đặc biệt trong dòng sản phẩm Air Jordan, hợp tác giữa Nike và nghệ sĩ Kaws. Được ra mắt vào năm 2017, đôi giày này nhanh chóng trở thành điểm nhấn đáng chú ý trong thế giới sneaker. Và nếu bạn cũng là một người đam mê dòng sneaker trắng thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày tại TyHi Sneaker (hàng chuẩn like auth đế phát sáng, bản xịn nhất thị trường).'),
 (10, 'Giày Air Jordan 1 Low Alternate Bred Toe Like Auth', 1, 1600000, 850000, 47,38, 'Giày Air Jordan 1 Low Alternate Bred Toe Like Auth với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phối đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Air Jordan 1 Low Alternate Bred Toe Like Auth tại TyHi Sneaker (hàng chuẩn Like Auth bản xịn nhất thị trường).'),
 
@@ -128,11 +128,29 @@ INSERT INTO SanPham (Id_SP, TenSP, Id_DM, GiaGoc, Gia, GiamGia, LuotXem, MotaSP)
 -- Sản phẩm thuộc danh mục 3 (Giày Converse)
 (16, 'Giày Converse Chuck Taylor All Star 1970s Hi Top Siêu Cấp', 3, 960000 , 550000, 43,56, 'Giày Converse Run Star Hike High ''White'' Trắng cổ cao , với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày Converse Run Star Hike High ''White'' Trắng cổ cao, tại TyHi Sneaker (hàng chuẩn 1:1, bản xịn nhất thị trường).'),
 (17, 'Giày Converse Run Star Hike High ''White'' Trắng cổ cao', 3, 990000, 750000, 24,23, 'Giày Air Force One All White với màu full trắng cùng thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích (đặc biệt là các bạn học sinh do một số trường học yêu cầu mang giày trắng). Và nếu bạn cũng là một người đam mê dòng sneaker trắng thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Air Force One All White tại TyHi Sneaker (bản siêu cấp da bò nhăn xịn nhất thị trường).'),
-(18, 'Giày Converse Chuck Taylor All Star 1970s White – High Trắng Cổ Cao', 3, 1400000,14, 980000, 30, 'Giày Converse Chuck Taylor All Star 1970s White – High Trắng Cổ cao với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày Converse Chuck Taylor All Star 1970s White – High Trắng Cổ cao, tại TyHi Sneaker (hàng chuẩn rep 1:1, bản xịn nhất thị trường).'),
+(18, 'Giày Converse Chuck Taylor All Star 1970s White – High Trắng Cổ Cao', 3, 1400000, 980000, 14, 30, 'Giày Converse Chuck Taylor All Star 1970s White – High Trắng Cổ cao với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày Converse Chuck Taylor All Star 1970s White – High Trắng Cổ cao, tại TyHi Sneaker (hàng chuẩn rep 1:1, bản xịn nhất thị trường).'),
 (19, 'Giày Converse Run Star Motion', 3, 1000000, 730000, 27,98, 'Giày Converse Run Star Motion với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Converse Run Star Motion 1:1 tại TyHi Sneaker (hàng chuẩn 1:1, bản Trung bản xịn nhất thị trường đừng so sánh giá với hàng xấu).'),
-(20, 'Giày Converse Chuck Taylor All Star 1970s Low Top Siêu Cấp', 3, 750000, 550000, 27,75, 'Giày Converse Chuck Taylor All Star 1970s Low Top với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Converse Chuck Taylor All Star 1970s Low Top Siêu Cấp tại TyHi Sneaker (hàng Trung chuẩn Siêu cấp, bản xịn nhất thị trường).');
+(20, 'Giày Converse Chuck Taylor All Star 1970s Low Top Siêu Cấp', 3, 750000, 550000, 27,75, 'Giày Converse Chuck Taylor All Star 1970s Low Top với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích. Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Converse Chuck Taylor All Star 1970s Low Top Siêu Cấp tại TyHi Sneaker (hàng Trung chuẩn Siêu cấp, bản xịn nhất thị trường).'),
 
 
+
+(21, 'Giày Nike Air Force 1 Valentine’s 2024 Best Quality', 1, 2000000 , 920000, 54,32, 'Giày Nike Air Force 1 Valentine’s 2024 Best Quality là phiên bản danh riêng cho tình nhân trong dịp Valentine 2024 của AF1.'),
+(22, 'Giày AF1 x Louis Vuitton White Green', 1, 1600000, 820000, 49,25, 'Giày AF1 x Louis Vuitton White Green là phiên bản độc lạ hiện nay ở Việt Nam ít ai có. Shop nhập về được số lượng ít, giá cực tốt cho mọi người trải nghiệm.'),
+(23, 'Giày Nike Air Jordan 1 x Union Retro High ‘Black Toe’ Like Auth', 1, 3200000,1500000, 53, 30, 'Giày Nike Air Jordan 1 x Union Retro High ‘Black Toe’ Like Auth với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Jordan 1 x Union Retro High ‘Black Toe’ Like Auth tại TyHi Sneaker (hàng chuẩn Like Auth bản xịn nhất thị trường).'),
+(24, 'Giày Nike Air Jordan 1 Retro High OG ‘Palomino’ Like Auth', 1, 3000000, 1350000, 55,24, 'Giày Nike Air Jordan 1 Retro High OG ‘Palomino’ Like Auth với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Jordan 1 Retro High OG ‘Palomino’ Like Auth tại TyHi Sneaker (hàng chuẩn Like Auth bản xịn nhất thị trường).'),
+(25, 'Giày Nike Air Force 1 Low ’07 What The NYC 2019', 1, 1600000, 820000, 49,67, 'Giày Nike Air Force 1 Low ’07 What The NYC 2019 là phiên bản độc lạ hiện nay ở Việt Nam ít ai có. Shop nhập về được số lượng ít, giá cực tốt cho mọi người trả nghiệm.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Nike Air Force 1 Low ’07 What The NYC 2019 tại TyHi Sneaker (hàng chuẩn bản xịn nhất thị trường).'),
+
+(26, 'Giày Adidas Samba OG Cherry Blossom Like Auth', 2, 1300000 , 750000, 42,48, 'Giày Adidas Samba OG Cherry Blossom Like Auth hiện đang là tâm điểm gây chú ý với giới trẻ đặc biệt đối với các tín đồ thời trang nữ. Với thiết kế tinh tế, sự kết hợp hài hòa giữa màu sắc và chất liêu, đôi giày này không chỉ là phụ kiện thời trang mà còn là biểu tượng của sự trẻ trung và năng động.'),
+(27, 'Giày Chạy Bộ Adidas EQT Bost 2023 Đỏ Đen LikeAuth', 2, 1800000, 1100000, 39,70, 'Giày Chạy Bộ Adidas EQT Bost 2023 Đỏ Đen LikeAuth với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Bảng nâng cấp 2023 Boost nén cực êm, đi như trên mây nên rất phù hợp cho các bạn thích sự thoải mái, nhẹ nhàng, chạy bộ thì không thể bỏ lỡ mẫu này được.Dưới đây là một số hình ảnh của đôi Giày Chạy Bộ Adidas EQT Bost 2023 Đỏ Đen LikeAuth tại TyHi Sneaker (hàng chuẩn bản xịn nhất thị trường).'),
+(28, 'Giày Chạy Bộ Adidas EQT Bost 2023 Cam Trắng LikeAuth', 2, 1800000, 1100000, 39,100, 'Giày Chạy Bộ Adidas EQT Bost 2023 Cam Trắng LikeAuth với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Bảng nâng cấp 2023 Boost nén cực êm, đi như trên mây nên rất phù hợp cho các bạn thích sự thoải mái, nhẹ nhàng, chạy bộ thì không thể bỏ lỡ mẫu này được.Dưới đây là một số hình ảnh của đôi Giày Chạy Bộ Adidas EQT Bost 2023 Cam Trắng LikeAuth tại TyHi Sneaker (hàng chuẩn bản xịn nhất thị trường).'),
+(29, 'Giày Adidas Centennial 85 Low #Scarlet Siêu Cấp', 2, 1700000, 820000, 52,46, 'Giày Adidas Centennial 85 Low #Scarlet với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của Giày Adidas Centennial 85 Low #Scarlet, tại TyHi Sneaker (hàng chuẩn 1:1, bản xịn nhất thị trường).'),
+(30, 'Giày Adidas Alphabounce Instinct M Turquoise Rep 1:1', 2, 1700000, 830000, 51,60, 'Giày Adidas Alphabounce Instinct M Turquoise với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi Giày Adidas Alphabounce Instinct M Turquoise Rep 1:1, tại TyHi Sneaker (hàng chuẩn 1:1, bản xịn nhất thị trường).'),
+
+(31, 'GIÀY CONVERSE RUNSTAR MOTION LIGHT TWIN SC', 3, 1400000 , 820000, 41,40, 'GIÀY CONVERSE RUNSTAR MOTION LIGHT TWIN với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày CV RUNSTAR MOTION LIGHT TWIN SC, tại TyHi Sneaker (hàng chuẩn 1:1, bản xịn nhất thị trường).'),
+(32, 'Giày Converse Run Star Hike Hi JW Anderson Black', 3, 1200000, 780000, 35,30, 'Giày Converse Run Star Hike Hi JW Anderson Black với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày Converse Run Star Hike Hi JW Anderson Black, tại TyHi Sneaker (hàng chuẩn siêu cấp bản xịn nhất thị trường).'),
+(33, 'Giày Converse Chuck Taylor 1970 Parchment Low Top Rep 1:1', 3, 950000, 480000, 49, 30, 'Giày Converse Chuck Taylor 1970 Parchment Low Top với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày CONVERSE 1970s KEM CỔ THẤP, tại TyHi Sneaker (hàng chuẩn 1:1, bản xịn nhất thị trường).'),
+(34, 'Giày Converse Chuck Taylor All Star 1970s Hi Top Rep 1:1', 3, 950000, 480000, 49,10, 'Giày Converse Chuck Taylor All Star 1970s Hi Top với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày CONVERSE 1970s KEM CỔ CAO, tại TyHi Sneaker (hàng chuẩn 1:1, bản xịn nhất thị trường).'),
+(35, 'Giày Giày Converse Run Star Hike Low White Trắng cổ thấp', 3, 1700000, 870000, 49,43, 'Giày Giày Converse Run Star Hike Low ‘White’ Trắng cổ thấp với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày Converse Run Star Hike Low White Trắng cổ thấp, tại TyHi Sneaker (hàng chuẩn rep 1:1, bản xịn nhất thị trường.)');
 -- Thêm dữ liệu mẫu vào SanPham_Size
 INSERT INTO SanPham_Size (Id_SP, Id_Size, SoLuong) VALUES
 (1, 5, 12),
@@ -166,7 +184,28 @@ INSERT INTO HinhAnh (Id_Hinh, Id_SP, Path) VALUES
 (17, 17, 'giay-converse-run-star-hike-high-white-trang-co-cao-4.jpg'),
 (18, 18, 'giay-converse-chuck-taylor-all-star-1970s-white-high-trang-co-cao-1.jpg'),
 (19, 19, 'converse-run-star-motion.jpg'),
-(20, 20, 'giay-converse-1970s.webp');
+(20, 20, 'giay-converse-1970s.webp'),
+
+(21, 21, 'giay-nike-air-force-1-valentines-2024-best-quality.jpg'),
+(22, 22, 'giay-af1-x-louis-vuitton-white-green.jpeg'),
+(23, 23, 'giay-nike-air-jordan-1-x-union-retro-high-black-toe-like-auth.jpg'),
+(24, 24, 'giay-jordan-1-retro-high-og-palomino-mens-dz5485-020.jpg'),
+(25, 25, 'giay-nike-air-force-1-low-07-what-the-nyc-2019.jpg'),
+
+(26, 26, 'giay-adidas-samba-white-pink-sakura-white-pink.png'),
+(27, 27, 'giay-chay-bo-adidas-eqt-bost-2023-do-den-likeauth.jpg'),
+(28, 28, 'giay-chay-bo-adidas-eqt-bost-2023-cam-trang-likeauth.jpg'),
+(29, 29, 'adidas-centennial-85-low-scarlet-1.jpg'),
+(30, 30, 'giay-adidas-alphabounce-instinct-m-turquoise-rep-1-1-8.jpeg'),
+
+(31, 31, 'c4803a1a-ae9f-4919-89ab-109cd4cd55e6071758bd58416dfa7b61099da6f4ecd1.webp'),
+(32, 32, 'giay-converse-run-star-hike-hi-jw-anderson-black-dep-chat.jpeg'),
+(33, 33, 'giay-converse-chuck-taylor-1970-parchment-low-top-rep-1-1.jpg'),
+(34, 34, 'Converse-trang-kem-co-cao-1970s.webp'),
+(35, 35, 'giay-giay-converse-run-star-hike-low-white-trang-co-thap-12-1.jpg');
+
+
+
 
 
 -- Thêm dữ liệu mẫu vào KhachHang

@@ -8,7 +8,7 @@
         extract($value);
       $ch.= '
       <div class="header-menu">
-            <div class="header_link"><a href="">Trang chủ</a> <p >Giày Adidas</p><p class="link_now">Giày Adidas Samba OG Cloud White Da Bê 100%</p></div>
+            <div class="header_link"><a href="">Trang chủ</a> <p >'.$Ten_DM.'</p><p class="link_now">'.$TenSP.'</p></div>
             </div>
         <div class="backround_productdetail">
             <div class="productdetail_image">
@@ -22,7 +22,7 @@
 
             </div>
             <div class="productdetail">
-                <P class="productdetail_name">Giày Adidas Samba OG Cloud White Da Bê 100%</P>
+                <P class="productdetail_name">'.$TenSP.'</P>
                 <div class="product_price"><del>'.$GiaGoc.'đ</del> <p>'.$Gia.'đ</p></div>
                 <p>Mã sản phẩm: '.$Id_SP.'</p>
                 <p>Tặng tất theo sản phẩm</p>
@@ -103,8 +103,9 @@ echo $ch;
                    $ch .= '
                    <div class="product">
                      <div class="discount">-'.$GiamGia.'%</div>
+                     <a href="index.php?trang=home&id='.$Id_SP.'&iddm='.$Id_DM.'">
                      <img src="public/img/' . $Path . '" alt="' . $TenSP . '">
-                     <a href="index.php?trang=home&id='.$Id_SP.'&iddm='.$Id_DM.'"><h3>' . $TenSP . '</h3></a>
+                     <h3>' . $TenSP . '</h3></a>
                      <p class="price">
                        <span class="old-price">'. number_format($GiaGoc, 0, ',', '.') . '₫</span>
                        <span class="new-price">'. number_format($Gia, 0, ',', '.') .'₫</span>

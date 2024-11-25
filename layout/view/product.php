@@ -8,13 +8,13 @@
                             <a href="index.php?trang=product">Tất Cả Sản Phẩm</a><br>
                             <style >
                              .product_catagory_list a {
-  color: #000; /* Màu mặc định cho liên kết */
-}
+                              color: #000; /* Màu mặc định cho liên kết */
+                            }
 
 
-.product_catagory_list a:hover {
-  color: #FF5733; /* Màu khi rê chuột */
-}
+                            .product_catagory_list a:hover {
+                              color: #FF5733; /* Màu khi rê chuột */
+                            }
                             </style>
                             <?php
 
@@ -83,8 +83,9 @@
                                 $ch .= '
                                 <div class="product">
                                   <div class="discount">-' . $GiamGia . '%</div>
+                                  <a href="index.php?trang=home&id='.$Id_SP.'&iddm='.$Id_DM.'">
                                   <img src="public/img/'.$Path.'" alt="' . $TenSP . '">
-                                  <a href="view/product_detail.php"><h3>' . $TenSP . '</h3></a>
+                                  <h3>' . $TenSP . '</h3></a>
                                   <p class="price">
                                     <span class="old-price">'. number_format($GiaGoc, 0, ',', '.') . '₫</span>
                                     <span class="new-price">'. number_format($Gia, 0, ',', '.') .'₫</span>

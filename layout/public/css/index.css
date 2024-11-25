@@ -32,13 +32,17 @@ a {
     padding: 10px 0px;
     margin: 0 auto; /* Để căn giữa header trong toàn bộ trang */
 }
+.header_left{
+  
+  width: 100%;
+  display: flex;
+}
 .header_background{
   
     background-color:#4481F8; /* Màu xanh header */
 }
 
 .header img {
-
     max-height: 80px; /* Chiều cao logo */
   
 }
@@ -49,9 +53,12 @@ a {
     align-items: center;
     position: relative;
     max-width: 560px;
+    margin-left: 50px;
+
 }
 
 .search-bar input {
+
     width: 100%;
     padding: 10px;
     border: none;
@@ -140,18 +147,14 @@ a {
 .categories {
     height: auto;
     display: flex;
-    padding-left: 240px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     background-color: white;
+    justify-content: center;
+   
+
 }
 
-.category-item {
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    white-space: nowrap;
-    
-}
+
 .category-item a:hover{
   color:#189EFF ;
 }
@@ -175,7 +178,8 @@ a {
 .category-item {
   margin: 10px 0;
   width: auto;
-  padding-right: 20px
+  font-weight: bold;
+  padding: 0px 30px;
 }
 
 /* Biểu tượng */
@@ -348,6 +352,7 @@ a {
   }
   /* Footer chính */
   footer {
+    width: 100%;
     background-color: #333; /* Màu nền footer */
     color: #fff; /* Màu chữ */
     font-family: Arial, sans-serif; /* Font chữ */
