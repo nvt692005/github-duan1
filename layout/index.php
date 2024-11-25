@@ -5,6 +5,8 @@ $iddm = isset($_GET['iddm']) ? $_GET['iddm'] : '';
 if ($page !== 'login' && $page !== 'signup') {
     include_once 'view/header.php';
 }
+
+
 switch ($page) {
     case 'home':
         include_once 'controller/HomeController.php';
@@ -13,6 +15,10 @@ switch ($page) {
     case 'product':
         include_once 'controller/ProductController.php';
         $ProductController = new ProductController($iddm);
+        break;
+    case 'product_detail':  
+        include_once 'controller/HomeController.php';
+        $HomeController = new HomeController($id, $iddm);
         break;
    /*  case 'new':
         include_once 'controller/ProductController.php';

@@ -27,7 +27,7 @@
       $ch .= '
       <div class="product">
         <div class="discount">-' . $GiamGia . '%</div>
-        <a href="index.php?trang=home&id='.$Id_SP.'&iddm='.$Id_DM.'">
+        <a href="index.php?trang=product_detail&id='.$Id_SP.'&iddm='.$Id_DM.'">
         <img src="public/img/' . $Path . '" alt="' . $TenSP . '">
         <h3>' . $TenSP . '</h3></a>
         <p class="price">
@@ -58,7 +58,7 @@ if (!empty($homemodel->mangsptheodm)) {
           $ch .= "<div class='discount'>-" . $GiamGia . "%</div>";
           
           // Dùng dấu nháy kép cho href và dấu nháy đơn cho chuỗi PHP
-          $ch .= '<a href="index.php?trang=home&id=' . $Id_SP . '&iddm=' . $Id_DM . '">';
+          $ch .= '<a href="index.php?trang=product_detail&id=' . $Id_SP . '&iddm=' . $Id_DM . '">';
           $ch .= "<img src='public/img/" . $Path . "' alt='" . $TenSP . "'>";
           $ch .= "<h3>" . $TenSP . "</h3>";
           $ch .= "</a>";
