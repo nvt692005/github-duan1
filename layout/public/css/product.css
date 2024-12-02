@@ -7,6 +7,13 @@
     display: flex;
     margin: 30px 0;
 }
+.tittle_link{
+    max-width: 1250px;
+    display: flex;
+    margin: 20px auto;
+    font-size: 18px;
+
+}
 
 .header_link {
     max-width: 1250px;
@@ -17,7 +24,11 @@
     left: 0px;
   
 }
-
+p.link_nowhead {
+    color: #189EFF;
+    margin: 0;
+    white-space: nowrap;
+}
 p.link_now {
     color: #189EFF;
     font-size: 30px;
@@ -38,7 +49,7 @@ label {
 .product_container1 {
     max-width: 1250px;
     display: flex;
-    margin: 40px auto;
+    margin: 20px auto;
     
 }
 
@@ -105,7 +116,14 @@ select {
     transition: transform 0.3s;
     background-color: white;
 }
+.product_catagory_list a {
+    color: #000; /* Màu mặc định cho liên kết */
+  }
 
+
+  .product_catagory_list a:hover {
+    color: #FF5733; /* Màu khi rê chuột */
+  }
 .product:hover {
     transform: translateY(-5px);
 }

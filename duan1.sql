@@ -10,7 +10,7 @@ CREATE TABLE KhachHang (
 );
 
 -- Tạo bảng DanhMuc
-CREATE TABLE DanhMuc (
+CREATE TABLE DanhMuc (      
     Id_DM INT PRIMARY KEY,
     Ten_DM NVARCHAR(50)
 );
@@ -153,16 +153,51 @@ INSERT INTO SanPham (Id_SP, TenSP, Id_DM, GiaGoc, Gia, GiamGia, LuotXem, MotaSP)
 (35, 'Giày Giày Converse Run Star Hike Low White Trắng cổ thấp', 3, 1700000, 870000, 49,43, 'Giày Giày Converse Run Star Hike Low ‘White’ Trắng cổ thấp với thiết kế đẹp, tinh tế & màu sắc vô cùng dễ phối đồ. Vậy nên đôi giày này trở nên phổ biến, mang tính biểu tượng và được rất nhiều giới trẻ yêu thích.Và nếu bạn cũng là một người đam mê dòng sneaker dễ mang, dễ phố đồ thì không nên bỏ qua mẫu giày siêu phẩm này đâu nhé! Dưới đây là một số hình ảnh của đôi giày Converse Run Star Hike Low White Trắng cổ thấp, tại TyHi Sneaker (hàng chuẩn rep 1:1, bản xịn nhất thị trường.)');
 -- Thêm dữ liệu mẫu vào SanPham_Size
 INSERT INTO SanPham_Size (Id_SP, Id_Size, SoLuong) VALUES
-(1, 5, 12),
-(1, 4, 8),
-(2, 6, 10),
-(2, 5, 7),
-(3, 3, 5),
-(3, 2, 3);
+(1, 5, 12), (1, 4, 8), (1, 3, 10),
+(2, 6, 10), (2, 5, 7), (2, 4, 6),
+(3, 3, 5), (3, 2, 3), (3, 1, 8),
+(4, 5, 12), (4, 4, 11), (4, 2, 6),
+(5, 1, 9), (5, 5, 10), (5, 6, 14),
+(6, 2, 18), (6, 3, 12), (6, 5, 10),
+(7, 4, 8), (7, 3, 6), (7, 1, 15),
+(8, 2, 10), (8, 6, 13), (8, 4, 9),
+(9, 1, 10), (9, 3, 8), (9, 5, 7),
+(10, 2, 12), (10, 5, 11), (10, 6, 9),
+(11, 4, 10), (11, 5, 9), (11, 1, 13),
+(12, 3, 15), (12, 6, 8), (12, 4, 7),
+(13, 5, 10), (13, 1, 12), (13, 2, 9),
+(14, 4, 8), (14, 2, 6), (14, 6, 11),
+(15, 5, 9), (15, 1, 10), (15, 2, 7),
+(16, 3, 12), (16, 6, 10), (16, 5, 8),
+(17, 2, 5), (17, 4, 7), (17, 3, 9),
+(18, 1, 11), (18, 5, 6), (18, 6, 12),
+(19, 2, 8), (19, 1, 10), (19, 4, 9),
+(20, 6, 7), (20, 5, 13), (20, 3, 12),
+(21, 1, 9), (21, 2, 11), (21, 5, 10),
+(22, 4, 10), (22, 6, 8), (22, 3, 7),
+(23, 5, 12), (23, 2, 10), (23, 4, 9),
+(24, 1, 6), (24, 2, 12), (24, 3, 8),
+(25, 6, 10), (25, 5, 8), (25, 1, 9),
+(26, 4, 7), (26, 6, 9), (26, 5, 12),
+(27, 1, 10), (27, 3, 11), (27, 2, 7),
+(28, 4, 8), (28, 5, 9), (28, 6, 10),
+(29, 3, 9), (29, 2, 11), (29, 1, 8),
+(30, 5, 6), (30, 2, 13), (30, 4, 9),
+(31, 1, 10), (31, 5, 7), (31, 2, 6),
+(32, 6, 14), (32, 3, 8), (32, 5, 10),
+(33, 1, 12), (33, 6, 10), (33, 4, 8),
+(34, 3, 10), (34, 2, 9), (34, 6, 12),
+(35, 5, 9), (35, 1, 10), (35, 2, 8);
+
+
 
 -- Thêm dữ liệu mẫu vào HinhAnh
 INSERT INTO HinhAnh (Id_Hinh, Id_SP, Path) VALUES
 (1, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg'),
+(36, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth-6.jpeg'),
+(37, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth-7.jpeg'),
+(37, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth-1.jpeg'),
+
 (2, 2, 'giay-air-force-one-all-white-like-auth.jpg'),
 (3, 3, 'giay-nike-air-force-1-white-black.jpg'),
 (4, 4, 'pure22-xanh-navy-removebg-preview.png'),

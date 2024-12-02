@@ -12,6 +12,9 @@ switch ($page) {
         include_once 'controller/HomeController.php';
         $HomeController = new HomeController($id, $iddm);
         break;
+    case 'introduce':
+        include_once 'view/introduce.php';
+        break;
     case 'product':
         include_once 'controller/ProductController.php';
         $ProductController = new ProductController($iddm);
@@ -20,14 +23,12 @@ switch ($page) {
         include_once 'controller/HomeController.php';
         $HomeController = new HomeController($id, $iddm);
         break;
-   /*  case 'new':
-        include_once 'controller/ProductController.php';
-        $ProductController = new ProductController();
+    case 'product_love':
+        include_once 'view/product_love.php';
         break;
     case 'contact':
-            include_once 'controller/ProductController.php';
-            $ProductController = new ProductController();
-            break; */
+            include_once 'view/contact.php';
+            break;
     case 'cart':
         include_once 'controller/CartController.php';
         $CartController = new CartController();

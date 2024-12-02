@@ -23,12 +23,13 @@ class ProductModel
     }
     public function dssptheodm($iddm)
 {
+        include_once 'model/connectmodel.php';
         $sql = "
         Select s.Id_SP, s.TenSP, s.Id_DM, s.GiaGoc, s.Gia, s.GiamGia, s.MotaSP, Path
         from sanpham s
         Join hinhanh h ON s.Id_SP = h.Id_SP
         where Id_DM=:iddm";
-        include_once 'model/connectmodel.php';
+        
         $data = new ConnectModel();
         $data->ketnoi();
         $stmt = $data->conn->prepare($sql);

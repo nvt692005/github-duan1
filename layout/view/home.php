@@ -11,9 +11,6 @@
   <div class="tittle_hot">
     <p>Giá Sốc⚡Hôm Nay</p>
     <div class="countdown">
-      <span>6 Ngày</span>
-      <span>0 Giờ</span>
-      <span>45 Giây</span>
       <a href="#" class="view-all">Xem tất cả</a>
     </div>
   </div>

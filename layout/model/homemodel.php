@@ -13,8 +13,8 @@ class HomeModel
         include_once 'model/connectmodel.php';
         $data = new ConnectModel();
         $sql = "
-        SELECT s.Id_SP, s.TenSP, s.Id_DM, s.GiaGoc, s.Gia, s.GiamGia, s.MotaSP, h.Path 
-        FROM Sanpham s 
+        SELECT s.Id_SP, s.TenSP, s.Id_DM, s.GiaGoc, s.Gia, s.GiamGia, h.Path 
+        FROM Sanpham s
         JOIN hinhanh h ON s.ID_SP = h.ID_SP 
         WHERE s.GiamGia >= 50
         LIMIT 5;
@@ -26,19 +26,22 @@ class HomeModel
     {
         include_once 'model/connectmodel.php';
         $data = new ConnectModel();
-        $sql = "
-        Select s.Id_SP, s.TenSP,Ten_DM, s.Gia, s.GiaGoc, s.MotaSP, h.Path
-        FROM sanpham s
-        JOIN DanhMuc d ON d.Id_DM = s.Id_DM
-        JOIN hinhanh h ON s.Id_SP = h.Id_SP
-        WHERE s.Id_SP = :id
-        ";
-        $this->motsp = $data->selectone($sql, $id);
-     
         
+        $sql = "
+        SELECT s.Id_SP, s.TenSP, d.Ten_DM, s.Gia, s.GiaGoc, s.MotaSP, h.Path AS ImagePath,
+               GROUP_CONCAT(DISTINCT sz.Size ORDER BY sz.Size ASC) AS Sizes,
+               GROUP_CONCAT(DISTINCT h.Path SEPARATOR ',') AS Images
+        FROM SanPham s
+        JOIN DanhMuc d ON d.Id_DM = s.Id_DM
+        LEFT JOIN SanPham_Size sp_sz ON s.Id_SP = sp_sz.Id_SP
+        LEFT JOIN SizeGiay sz ON sp_sz.Id_Size = sz.Id_Size
+        LEFT JOIN HinhAnh h ON s.Id_SP = h.Id_SP
+        WHERE s.Id_SP = :id
+        GROUP BY s.Id_SP";
+    
+        $this->motsp = $data->selectone($sql, $id);
     }
     
-
     public function splienquan($id, $iddm)
 {
     include_once 'model/connectmodel.php';
@@ -77,14 +80,15 @@ public function dssptheodm()
 
     // Truy vấn sản phẩm mới ra mắt (theo NgayDang)
     $sqlNewProducts = "
-        SELECT 
-            s.Id_SP, s.TenSP, s.GiaGoc, s.Gia, s.GiamGia, h.Path, s.NgayDang
-        FROM Sanpham s
-        JOIN hinhanh h ON s.ID_SP = h.ID_SP
-        WHERE s.NgayDang IS NOT NULL
-        ORDER BY s.NgayDang ASC
-        LIMIT 5
-    ";
+    SELECT DISTINCT 
+        s.Id_SP, s.TenSP, s.GiaGoc, s.Gia, s.GiamGia, h.Path, s.NgayDang
+    FROM Sanpham s
+    JOIN hinhanh h ON s.ID_SP = h.ID_SP
+    WHERE s.NgayDang IS NOT NULL 
+    ORDER BY s.NgayDang ASC
+    LIMIT 5
+";
+
 
     // Truy vấn sản phẩm nhiều lượt xem (theo LuotXem)
     $sqlTopViewedProducts = "
@@ -122,7 +126,7 @@ public function dssptheodm()
     }
 
     $data->conn = null;
-    $this->mangsptheodm = $groupedProducts; // Lưu kết quả sản phẩm theo tiêu chí
+    $this->mangsptheodm = $groupedProducts; 
 }
 
 

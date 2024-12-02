@@ -1,90 +1,122 @@
 <link rel="stylesheet" href="public/css/product_detail.css">
 
     <div class="container_productdetail">
-      <?php
+    <?php
+$ch = '';
 
-      $ch = '';
-      foreach ($homemodel->motsp as $key => $value) {
-        extract($value);
-      $ch.= '
-      <div class="header-menu">
-            <div class="header_link"><a href="">Trang chủ</a> <p >'.$Ten_DM.'</p><p class="link_now">'.$TenSP.'</p></div>
+foreach ($homemodel->motsp as $key => $value) {
+    extract($value);
+    
+    // Lấy danh sách ảnh và kích thước từ chuỗi
+    $imageArray = explode(',', $value['Images']);
+    $sizeArray = explode(',', $value['Sizes']);
+
+    $ch .= '
+    <div class="header-menu">
+        <div class="header_link"><a href="">Trang chủ</a> <p >'.$Ten_DM.'</p><p class="link_now">'.$TenSP.'</p></div>
+    </div>
+    <div class="backround_productdetail">
+        <div class="productdetail_image">
+            <div class="productdetail_image_main"><img src="public/img/'.$ImagePath.'" alt=""></div>
+            <div class="productdetail_image_extra">';
+            
+            // Hiển thị các hình ảnh phụ
+            if (!empty($imageArray)) {
+                foreach ($imageArray as $image) {
+                    // Nếu hình ảnh trùng với $ImagePat, bỏ qua nó
+                    if ($image == $ImagePath) {
+                        continue;
+                    }
+                    
+                    // Nếu không, in ra hình ảnh
+                    $ch .= '<img src="public/img/'.$image.'" alt="">';
+                }
+            } else {
+                $ch .= '<p>No extra images available</p>';
+            }
+
+            $ch .= '
             </div>
-        <div class="backround_productdetail">
-            <div class="productdetail_image">
-                <div class="productdetail_image_main"><img src="public/img/'.$Path.'" alt=""></div>
-                <div class="productdetail_image_extra">
-                    <img src="public/img/'.$Path.'" alt="">
-                    <img src="public/img/'.$Path.'" alt="">
-                    <img src="public/img/'.$Path.'" alt="">
-                    <img src="public/img/'.$Path.'" alt="">
-                </div>
-
-            </div>
-            <div class="productdetail">
-                <P class="productdetail_name">'.$TenSP.'</P>
-                <div class="product_price"><del>'.$GiaGoc.'đ</del> <p>'.$Gia.'đ</p></div>
-                <p>Mã sản phẩm: '.$Id_SP.'</p>
-                <p>Tặng tất theo sản phẩm</p>
-                <div class="product_size">
-                    <div class="tittle_size">Size</div>
-                    <p>36</p>
-                    <p>37</p>
-                    <p>38</p>
-                    <p>39</p>
-                    <p>40</p>
-                    <p>41</p>
-                    <p>42</p>
-                    <p>43</p>
-                    <p>44</p>
-                </div>
-                <div class="product_quanlity" >
-                    <p>Chọn số lượng:</p>
-                    <div class="counter">
-                        <span>-</span>
-                        <span>1</span>
-                        <span>+</span>
-                    </div>
-                </div>
-                <button class="click_buy">ĐẶT MUA NGAY</button>
-
-            </div>
-
-            <div class="product_catagory_policy">
-                <div class="logo_tittle">
-                 <img  height="50" src="public/img/1.png" width="100"/>
-                 <p>Fivestep shoe</p>
-                </div>
-                <div class="features">
-                 <div class="feature">
-                  <img src="public/img/hoan-tien.png.png" alt="">
-                  <p> Hoàn tiền<br/><strong> 100%</strong><br/>nếu hàng không chuẩn </p>
-                 </div>
-                 <div class="feature">
-                 <img src="public/img/unbox.png" alt=""><p>Nhận hàng<br/>Kiểm tra hàng<br/>Thoải mái </p>
-                 </div>
-                 <div class="feature">
-                  <img src="public/img/doi-tra.png" alt=""><p> Đổi trả trong<br/><strong>7 ngày </strong><br/>nếu sp lỗi</p>
-                 </div>
-                </div>
-
-            </div>
-
-
         </div>
-        <div class="product_describe">
-            <div class="header_tittle">MÔ TẢ SẢN PHẨM</div>
-            <div class="product_describe_detail">
-                <p><a href="">'.$TenSP.'</a> '.$MotaSP.'</p>
-                <img src="public/img/'.$Path.'" alt="">
-                <p class="view_detail">Xem tiếp</p>
+        <div class="productdetail">
+            <P class="productdetail_name">'.$TenSP.'</P>
+            <div class="product_price"><del>'. number_format($GiaGoc, 0, ',', '.') .'đ</del> <p>'. number_format($Gia, 0, ',', '.') .'đ</p></div>
+            <p>Mã sản phẩm: '.$Id_SP.'</p>
+            <p>Tặng tất theo sản phẩm</p>
+            <div class="product_size">
+                <div class="tittle_size">Size</div>';
+                
+                // Hiển thị danh sách size
+                if (!empty($sizeArray)) {
+                    foreach ($sizeArray as $size) {
+                        $ch .= '<p>'.$size.'</p>';
+                    }
+                } else {
+                    $ch .= '<p>No sizes available</p>';
+                }
+            
+            $ch .= '
             </div>
-        </div>';
-}
-echo $ch;
+            <div class="product_quanlity" >
+                <p>Chọn số lượng:</p>
+                <div class="counter">
+                    <span>-</span>
+                    <span>1</span>
+                    <span>+</span>
+                </div>
+            </div>
+            <button class="click_buy">ĐẶT MUA NGAY</button>
+        </div>
 
-       
+        <div class="product_catagory_policy">
+            <div class="logo_tittle">
+             <img height="50" src="public/img/1.png" width="100"/>
+             <p>Fivestep shoe</p>
+            </div>
+            <div class="features">
+             <div class="feature">
+              <img src="public/img/hoan-tien.png.png" alt="">
+              <p> Hoàn tiền<br/><strong> 100%</strong><br/>nếu hàng không chuẩn </p>
+             </div>
+             <div class="feature">
+             <img src="public/img/unbox.png" alt=""><p>Nhận hàng<br/>Kiểm tra hàng<br/>Thoải mái </p>
+             </div>
+             <div class="feature">
+              <img src="public/img/doi-tra.png" alt=""><p> Đổi trả trong<br/><strong>7 ngày </strong><br/>nếu sp lỗi</p>
+             </div>
+            </div>
+        </div>
+    </div>
+    <div class="product_describe">
+        <div class="header_tittle">MÔ TẢ SẢN PHẨM</div>
+        <div class="product_describe_detail">
+            <p><a href="">'.$TenSP.'</a> '.$MotaSP.'</p>';
+            
+
+            if (!empty($imageArray)) {
+                foreach ($imageArray as $image) {
+                    // Nếu hình ảnh trùng với $ImagePat, bỏ qua nó
+                    if ($image == $ImagePath) {
+                        continue;
+                    }
+                    
+                    // Nếu không, in ra hình ảnh
+                    $ch .= '<img src="public/img/'.$image.'" alt="">';
+                }
+            } else {
+                $ch .= '<p>No extra images available</p>';
+            }
+             $ch .= '
+            
+            <p class="view_detail">Xem tiếp</p>
+        </div>
+    </div>';
+}
+
+echo $ch;
 ?>
+
+
         <div class="product_container">
             <div class="tittle">
                 <p>Khám Phá Thêm</p>
@@ -114,7 +146,7 @@ echo $ch;
                  }
                  echo $ch;
                  ?>
-              ?>
+             
             </div>
           </div>
 

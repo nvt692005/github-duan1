@@ -34,6 +34,19 @@ class ConnectModel{
         $this->conn = null; 
         return $kq; 
     }
+
+    public function selectall1($sql, $params = []) {
+        $this->ketnoi();
+        $stmt = $this->conn->prepare($sql);
+
+        // Gắn các tham số vào câu truy vấn nếu có
+        foreach ($params as $key => $value) {
+            $stmt->bindParam($key, $value);
+        }
+        $stmt->execute();
+        $kq = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        return $kq;
+    }
    
     
 }

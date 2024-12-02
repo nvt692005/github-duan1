@@ -15,7 +15,7 @@ class HomeController
         } else {
             $homemodel->dssptheodm();
             $homemodel->dsspkm();
-            include_once 'view/home.php';
+            include_once 'view/home.php';   
         }
     }
 }

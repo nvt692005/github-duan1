@@ -1,26 +1,16 @@
 
 <link rel="stylesheet" href="public/css/product.css">
-       
+        <!-- <div class="tittle_link"><a href="">Trang chủ</a> <p class="link_nowhead" >'.$Ten_DM.'</p></div> -->
         <div class="product_container1">
             <div class="product_catagory">
                         <p>DANH MỤC SẢN PHẨM</p>
                         <div class="product_catagory_list">
                             <a href="index.php?trang=product">Tất Cả Sản Phẩm</a><br>
-                            <style >
-                             .product_catagory_list a {
-                              color: #000; /* Màu mặc định cho liên kết */
-                            }
-
-
-                            .product_catagory_list a:hover {
-                              color: #FF5733; /* Màu khi rê chuột */
-                            }
-                            </style>
                             <?php
 
                             $ch = '';
                             foreach ($dm->dm as $key => $value) {
-                                $ch .= '<a  href="index.php?trang=product&iddm='.$value['Id_DM'] .' &Ten_DM=' . $value['Ten_DM'] . '">' . $value['Ten_DM'] . '</a> <br>';
+                                $ch .= '<a href="index.php?trang=product&iddm='.$value['Id_DM'].'&Ten_DM='.$value['Ten_DM'].'"> '. $value['Ten_DM'] . '</a> <br>';
                             }
                             echo $ch;
                             ?>

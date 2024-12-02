@@ -43,9 +43,10 @@
 
     <div class="categories">
       <div class="category-item"><a href="index.php?trang=home">Trang Chủ</a></div>
-      <div class="category-item"><a href="index.php?trang=gioithieu">Giới Thiệu</a></div>
+      <div class="category-item"><a href="index.php?trang=introduce">Giới Thiệu</a></div>
       <div class="category-item"><a href="index.php?trang=product">Sản phẩm</a></div>
       <div class="category-item"><a href="index.php?trang=contact">Liên Hệ</a></div>
       <div class="category-item"><a href="index.php?trang=new">Tin Tức</a></div>
+
     </div>
    

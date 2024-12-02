@@ -17,7 +17,6 @@ class ProductController
         $mangsp = $dm->dssptheodm($iddm);
     }
 
-    // Gửi dữ liệu tới view
     include_once 'view/product.php';
 }
 
