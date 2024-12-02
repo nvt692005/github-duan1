@@ -196,7 +196,7 @@ INSERT INTO HinhAnh (Id_Hinh, Id_SP, Path) VALUES
 (1, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg'),
 (36, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth-6.jpeg'),
 (37, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth-7.jpeg'),
-(37, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth-1.jpeg'),
+(38, 1, 'giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth-1.jpeg'),
 
 (2, 2, 'giay-air-force-one-all-white-like-auth.jpg'),
 (3, 3, 'giay-nike-air-force-1-white-black.jpg'),
