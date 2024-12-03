@@ -1,0 +1,459 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Container */
+.container {
+    max-width: auto;
+    margin: 0 auto;
+  
+}
+
+/* Header */
+.header {
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between; /* Chia khoảng cách giữa các phần tử */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 10px 0px;
+    margin: 0 auto; /* Để căn giữa header trong toàn bộ trang */
+}
+.header_left{
+  
+  width: 100%;
+  display: flex;
+}
+.header_background{
+  
+    background-color:#4481F8; /* Màu xanh header */
+}
+
+.header img {
+    max-height: 80px; /* Chiều cao logo */
+  
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 560px;
+    margin-left: 50px;
+
+}
+
+.search-bar input {
+
+    width: 100%;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #189EFF;
+}
+.search-bar button i {
+    height: 16px;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.863);
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.nav-links a {
+  text-decoration: none; /* Xóa gạch chân */
+ 
+}
+
+.nav-links a:hover {
+  text-decoration: none; /* Xóa gạch chân khi hover */
+  color: #189EFF; /* Màu thay đổi khi hover (nếu muốn) */
+}
+
+.nav-links a img {
+    height: 20px; /* Kích thước icon */
+}
+
+
+/* Phần container chính */
+.banner {
+    display: flex; /* Bố cục flex để đặt các phần cạnh nhau */
+    justify-content: space-between; /* Tạo khoảng cách giữa các phần */
+    align-items: center; /* Canh giữa theo chiều dọc */
+    width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    max-width: 1250px; /* Giới hạn chiều rộng banner */
+    margin: 0 auto; /* Canh giữa banner trên trang */
+    gap: 10px; /* Khoảng cách giữa các phần */
+}
+
+/* Phần bên trái */
+.banner-left {
+    flex: 7; /* Phần bên trái chiếm khoảng 70% */
+}
+
+/* Phần bên phải */
+.banner-right {
+    flex: 3; /* Phần bên phải chiếm khoảng 30% */
+}
+
+/* Hình ảnh trong banner */
+.banner img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng div chứa nó */
+    height: 400px; /* Giữ nguyên tỷ lệ khung hình */
+    display: block; /* Loại bỏ khoảng cách thừa */
+}
+
+/* Categories */
+.categories {
+    height: auto;
+    display: flex;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    justify-content: center;
+   
+
+}
+
+
+.category-item a:hover{
+  color:#189EFF ;
+}
+
+/* Container chính */
+.category-container {
+    max-width: 1250px;
+    margin: 20px auto;
+    display: flex; /* Sử dụng Flexbox để căn đều các mục */
+    justify-content: space-around; /* Tạo khoảng cách đều giữa các mục */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu không đủ không gian */
+    padding: 20px; /* Tạo khoảng cách bên trong container */
+    background-color: white; /* Màu nền nhạt */
+    border-radius: 8px; /* Bo góc cho container */
+    border: 1px solid none;
+
+}
+
+/* Mỗi mục */
+.category-item {
+  margin: 10px 0;
+  width: auto;
+  font-weight: bold;
+  padding: 0px 30px;
+}
+
+/* Biểu tượng */
+.category-icon {
+    width: 80px; /* Kích thước biểu tượng */
+    height: 80px;
+    background-color: #d5f5e3; /* Nền màu xanh nhạt */
+    border-radius: 50%; /* Tạo hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px; /* Căn giữa và tạo khoảng cách dưới */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+}
+
+/* Hình ảnh trong biểu tượng */
+.category-icon img {
+    width: 60%; /* Hình ảnh chiếm 60% không gian hình tròn */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+}
+
+/* Văn bản */
+.category-text {
+    font-size: 14px; /* Cỡ chữ */
+    font-weight: 500; /* Độ đậm vừa phải */
+    color: #333; /* Màu chữ */
+}
+
+.product_container {
+    max-width: 1250px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 26px;
+
+  }
+  
+  /* Header styles */
+  .tittle_hot {
+    text-align: center;
+    background: linear-gradient(to bottom, #2D0798, #035aad);
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+   
+  }
+  
+  .tittle_hot p {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(255,114,27);
+    font-style: italic;
+    
+  }
+  .tittle  {
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    font-size: 24px;
+    color:#0078d7 ;
+    font-weight: bolder;
+
+   
+  }
+  
+  .countdown {
+    position: absolute; /* Định vị tuyệt đối trong container cha */
+    top: 10px;          /* Căn chỉnh từ trên */
+    right: 10px;        /* Căn chỉnh từ phải */
+    display: flex;
+    gap: 10px;
+  
+  }
+  
+  .countdown span {
+    background-color: white;
+    color: #0078d7;
+    padding: 2px 2px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+   
+  }
+  
+  .view-all {
+    color: #0078d7;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 2px 2px;
+    border-radius: 5px;
+  }
+  
+  .view-all:hover {
+    font-size: large;
+    background-color: white;
+    font-weight: bold;
+  }
+  
+  /* Products grid */
+  .products {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .product {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 15px);
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product h3 {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .old-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 5px;
+  }
+  
+  .new-price {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .discount {
+    position: absolute;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    top: 10px;
+    left: 10px;
+    border-radius: 3px;
+  }
+  /* Footer chính */
+  footer {
+    width: 100%;
+    background-color: #333; /* Màu nền footer */
+    color: #fff; /* Màu chữ */
+    font-family: Arial, sans-serif; /* Font chữ */
+    padding: 40px 20px; /* Khoảng cách trong footer */
+    font-size: 14px; /* Kích thước chữ */
+    line-height: 1.8; /* Khoảng cách dòng */
+  }
+  
+  footer .footer-container {
+    display: flex; /* Dùng flexbox để chia cột */
+    justify-content: space-between; /* Chia đều khoảng cách giữa các cột */
+    flex-wrap: wrap; /* Tự động xuống dòng nếu không đủ không gian */
+    max-width: 1250px; /* Chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa footer */
+    gap: 30px; /* Khoảng cách giữa các cột */
+  }
+  
+  footer h3 {
+    color: #fff; /* Màu chữ tiêu đề */
+    font-size: 16px; /* Kích thước tiêu đề */
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+  }
+  
+  footer ul {
+    list-style: none; /* Xóa gạch đầu dòng */
+    padding: 0; /* Xóa padding mặc định */
+    margin: 0; /* Xóa margin mặc định */
+  }
+  
+  footer ul li {
+    margin-bottom: 10px; /* Khoảng cách giữa các mục */
+  }
+  
+  footer ul li a {
+    color: #fff; /* Màu chữ liên kết */
+    text-decoration: none; /* Xóa gạch chân liên kết */
+  }
+  
+  footer ul li a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+  }
+  
+  /* Thông tin hỗ trợ */
+  footer .contact-info p {
+    margin: 5px 0; /* Khoảng cách giữa các dòng */
+  }
+  
+  footer .contact-info strong {
+    color: #ffa500; /* Màu cam nổi bật */
+  }
+  
+  /* Địa chỉ */
+  footer .address ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  footer .address li {
+    margin-bottom: 10px;
+    color: #ccc; /* Màu chữ nhạt hơn cho địa chỉ */
+  }
+  
+  /* Bản đồ */
+  footer .social-links {
+    max-width: 1250px;
+    text-align: center;
+    margin: 20px auto; /* Căn giữa phần mạng xã hội */
+    border-top: 1px solid #555; /* Đường viền phía trên */
+    padding-top: 15px; /* Khoảng cách bên trong phía trên */
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: space-between; /* Tạo khoảng cách giữa các nhóm icon */
+    align-items: center; /* Căn giữa theo trục dọc */
+  }
+  
+  footer .social-links a {
+    display: inline-block; /* Đảm bảo mỗi liên kết là một khối nội tuyến */
+  }
+  
+  footer .social-links a .icon_right {
+    right: 0; /* Đặt vị trí sát bên phải */
+  }
+  footer .social-links-left{
+    display: flex;
+  }
+  footer .social-links-left a {
+    padding-left: 20px;
+  }
+  
+  footer .social-links-left a img {
+    width: 30px; /* Kích thước của mỗi icon */
+    height: auto; /* Đảm bảo tỷ lệ ảnh */
+    margin: 0; /* Xóa khoảng cách mặc định */
+  }
+  
+  
+  /* Dòng bản quyền hoặc logo bên dưới */
+  footer .copyright {
+    text-align: center; /* Căn giữa dòng chữ */
+    margin-top: 20px; /* Khoảng cách phía trên */
+    font-size: 12px; /* Kích thước nhỏ hơn cho bản quyền */
+    color: #ccc; /* Màu chữ nhạt */
+  }
+  
