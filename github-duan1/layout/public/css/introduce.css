@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+}
+.background_cointainer{
+    max-width: 1250px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+.background_cointainer p, h3 {
+    padding: 10px 0px;
+}
+.introduce_img{
+    text-align: center;
+}
+.introduce_img img{
+    width: 800px;
+
+}
